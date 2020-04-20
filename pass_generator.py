@@ -22,7 +22,7 @@ while(n<=0):
 password = []
 
 #create simple password.
-def simple(n):          
+def _simple(n):          
 	for i in range(0, n):
 		password.append(random.choice(upper + lower + num))
 #create complex password
@@ -38,7 +38,7 @@ def choice(n):
 		ch = eval(input('Press 1 to create simple password\nPress 2 to create complex password\n>'))
 
 	if(ch == 1):
-		simple(n)
+		_simple(n)
 	if(ch == 2):
 		_complex(n)
 	
@@ -55,4 +55,4 @@ fob = open(n + '.txt', 'w+')
 fob.write('Your generated password is: \n\n')
 fob.write(password)
 fob.close()
-ctypes.windll.user32.MessageBoxA(0,"Your Password was saved successfully in a text file "+ n +".txt","Message",0)
+ctypes.windll.user32.MessageBoxW(0,"Your Password was saved successfully in a text file " + n + ".txt","Message",1)
